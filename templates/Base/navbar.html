@@ -1,0 +1,33 @@
+{% load static %}
+
+<nav>
+    <div class="logo">
+        <img src="{% static 'img/MoC.png' %}" alt="Logo Image">
+        <div class="dropdown">
+              <button><u>Bhopal</u></button>
+              <div class="dropdown-options">
+                <a href="#">Indore</a>
+                <a href="#">Sagar</a>
+                <a href="#">Vidisha</a>
+                <a href="#">Ujjain</a>
+                <a href="#">Mandideep</a>
+              </div>
+            </div>
+        <!-- <h2><a href="">Bhopal <i class="ri-arrow-drop-down-line"></i></a></h2> -->
+    </div>
+    <div class="hamburger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{% url 'home_page' %}">Home</a></li>
+        <li><a href="{% url 'service_page' %}">About</a></li>
+        <li><a href="{% url 'contact_page' %}">Contact</a></li>
+        <li><a href="{% url 'service_page' %}">Services</a></li>
+      
+        <li><a href="{% url 'login_page' %}" class="login-button">Login</a></li>
+        <li><a href="{% url 'customer_register' %}" class="join-button" >Join</a></li>
+    </ul>
+</nav>
+

@@ -1,0 +1,59 @@
+{% extends 'ERP/base.html' %}
+{% load static %}
+{% block content %}
+<div class="addServices">
+<form  method="post">
+    {% csrf_token %}
+{% include 'ERP/search_widget.html' %}
+      <br>
+
+      <div class="table-wrap">
+      <table id="myTable" class = 'table table-bordered'>
+       <tr> <th>Sr.NO</th> <th>Service</th> <th>Select</th></tr> 
+        {% for service in services %}
+  
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{service}}</td>
+        <td><input type="checkbox" name="cb" id="cb" value="{{service.id}}"></td>
+    </tr>
+        {% endfor %}
+    </table>
+      </div>
+      <button style="margin-left: 50px;" id="additionalServices"  type="submit"> Additional Services </button>
+   
+</form>
+<br>
+<br>
+<input style="margin-left: 50px;" class="btn btn-outline-primary" type=button value="Previous Page" onClick="javascript:history.go(-1);">
+<input style="margin-left: 50px;" class="btn btn-outline-primary" type=button value="Next Page" onClick="javascript:history.go(+1);">
+</div>
+<!-- <form  method="post">
+    {% include 'ERP/search_widget.html' %}
+    <br>
+    <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">SR.NO</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+            </tbody>
+      </table>
+</form> -->
+{% endblock %}

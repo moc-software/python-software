@@ -1,0 +1,27 @@
+{% extends 'ERP/base.html' %}
+{% load static %}
+{% block content %}
+<div class="extraServices">
+<form  method="post">
+    <h1>Please add your additional services</h1>
+    {% csrf_token %}
+
+    <div class="extraServicesInput">
+<input type="number" name="add_ser_amt" placeholder="Amount"><br><br>
+<input type="text" name="add_services" placeholder="Additional Services"><br><br>
+</div>
+<br>
+<br>
+<div class="extraServiceBtn1">
+<button style="margin-left: 50px;" id="extraServiceBtn"  type="submit"> Proceed</button>
+</div>
+</form>
+
+<br>
+<br>
+<div class="extraServiceBtn2">
+<input class="btn btn-outline-primary" type=button value="Previous Page" onClick="javascript:history.go(-1);">
+<input style="margin-left: 50px;" class="btn btn-outline-primary" type=button value="Next Page" onClick="javascript:history.go(+1);">
+</div>
+</div>
+{% endblock %}

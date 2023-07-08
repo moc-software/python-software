@@ -1,0 +1,38 @@
+{% load static %}
+<div id="page1">
+    <img src="{% static 'img/bglan.jpg' %}" alt="">
+      <div class="dets">
+          <h1>MOCTECH PRIVATE LIMITED</h1>
+          <h4>book your four wheeler & two wheeler for service/repair from anywhere and check their working status on your mobile & online platform. </h4>
+      </div>
+      <div class="booking-form">
+          <h1>Want To Get Your Vehicles Best Care.</h1>
+          <p>Search for your vehicle</p>
+          <form method="post">
+            {% csrf_token %}
+            <input type="hidden" id = 'city' value="Bhopal">
+              <select class="round" name="type" hx-get="{% url 'get_brands' %}" hx-trigger="change" hx-target="#brands">
+                <option selected>Select Type</option> 
+                <option value="1">Two Wheeler</option>
+                <option value="2">Four Wheeler</option>
+              </select>
+              <div id = 'brands'>{% include 'Base/partial/brands.html' %}</div>
+              <div id = 'models'>{% include 'Base/partial/models.html' %}</div>
+              <select class="round" name="fuel">
+                <option selected>Select Fuel Type</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+             </select>
+              <input type="tel" name="phone"  placeholder="Phone Number" pattern="[0-9]{10}" required>
+              <input type="text" name="request"  placeholder="Special Request">
+               <input id="submit" type="submit" value="Submit">
+          </form>
+          {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+      </div>
+  </div>

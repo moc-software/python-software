@@ -1,0 +1,83 @@
+{% extends 'ERP/base.html' %}
+{% load static %}
+{% block content %}
+
+<form  method="post">
+    <h1>Enter your vehical Number</h1>
+    {% csrf_token %}
+    <input list="vehical-list" placeholder="Vehical Number" name = 'vehical'>
+    <datalist id = "vehical-list">
+        {% for vehical in vehicals %}
+        <option value="{{vehical.number}}"></option>
+        {% endfor %}
+    </datalist><br><br>
+
+      
+     
+    <button id="jobCardButton"  type="submit"> Proceed</button>
+   
+</form>
+
+<!-- <div class="advisor">
+    <form method="post">
+      {% csrf_token %}
+      <div class="advisor-top">
+        <div class="jobCardDesc">
+          <h1>Vehicle Job Card</h1>
+        </div>
+        <button type="button" class="btn btn-danger me-1 refeashBtn">Clear</button>
+      </div>
+
+      <div class="advisor-middle">
+
+        <div class="jobcard1">
+
+          <div class="job_no">
+            <label for="JobNo">Job No</label> <br>
+            <input id="jobCardNo" type="text" placeholder="******" name="jobnumber">
+          </div>
+
+          <div class="job_date">
+            <label for="JobDate">Job Date</label> <br>
+            <input id="jobCardDate" type="date" placeholder="20/03/23" name="date">
+          </div>
+
+          <div class="vehicle-rc">
+            <label for="Vehicle-rc">Vehicle Registration No</label> <br>
+            <input id="jobCardRegNo" type="text" placeholder="**********" maxlength="16" name="jobCardRegNo">
+          </div>
+
+          <div class="kilometer">
+            <label for="km">Kilometer</label> <br>
+            <input id="jobCardKM" type="number" placeholder="**********" name="jobCardKM" >
+          </div>
+
+          <div class="timeIn">
+            <label for="Timein">TimeIN</label> <br>
+            <input id="jobCardTime" type="time" name="timeIn">
+          </div>
+
+
+        </div>
+
+
+        <div class="jobcard3">
+
+          <div class="address">
+            <label for="address">Address</label> <br>
+            <textarea id="jobCardCustomerAddress" placeholder="Address" name="address"></textarea>
+          </div>
+
+          <div class="address">
+            <label for="address">Work Required</label> <br>
+            <textarea id="jobCardWorkRequired" placeholder="Work Required" name="address"></textarea>
+          </div>
+
+        </div>
+
+        <button id="jobCardButton" type="submit"> Proceed</button>
+      </div>
+    </form>
+  </div> -->
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- external css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/marq.css' %}">
+    <link rel="stylesheet" href="{% static 'css/testo.css' %}">
+    <link rel="stylesheet" href="{% static 'css\respon.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/MoCfev.png' %}" type="image/x-icon">
+
+    <!-- links -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <title>MOCTech Pvt. Ltd.</title>
+    <!---htmx--->
+    <script src="https://unpkg.com/htmx.org@1.6.0"></script>
+</head>
+<body>
+
+    {% include 'Base/navbar.html' %}
+    {% block content %}
+	
+
+    {% endblock %}
+	{% include 'Base/footer.html' %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{% static 'js/testo.js' %}"></script>
+    <script src="{% static 'js/nav.js' %}"></script>
+    
+</body>
+</html>
